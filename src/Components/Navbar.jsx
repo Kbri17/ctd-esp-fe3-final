@@ -1,27 +1,31 @@
-import React from 'react'
+import React, { useContext } from 'react';
 import { Link, useNavigate } from "react-router-dom";
+import ThemeContext from "../Context/ThemeContext";
 
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+
 
 const Navbar = () => {
+  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
   const navigate = useNavigate();
   return (
-    <nav className="navbar">
-    <button onClick={() => navigate(-1)}>🔙</button>
+    <nav className={`navbar ${isDarkMode ? 'dark' : ''}`}>
+    
     <Link to="/">
-      <h4>Home</h4>
+      <h4 className='navLink'>Home</h4>
     </Link>
     <Link to="/envio">
-      <h4>Contacto</h4>
+      <h4 className='navLink'> Contacto</h4>
     </Link>
     <Link to="/detail/:id">
-      <h4>Detalle de cada dentista</h4>
+      <h4 className='navLink'>Detalle </h4>
     </Link>
     <Link to="/favs">
-      <h4>Destacados</h4>
+      <h4 className='navLink'>Destacados</h4>
     </Link>
-    
+    <button class="theme-toggle-btn" onClick={toggleTheme}>
+            {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+          </button>
   </nav>
   )
 }

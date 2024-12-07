@@ -7,7 +7,7 @@ export const reducer = (state,action) => {
       };
     case "ADD_FAV":
       const updatedFavs = [...state.favs, action.payload];
-      localStorage.setItem("favs", JSON.stringify(updatedFavs)); // Sincroniza con localStorage
+      localStorage.setItem("favs", JSON.stringify(updatedFavs)); 
       return { ...state, favs: updatedFavs };
     
     case "DELETE_FAV":

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Card from "./Card";
+
 
 
 const Form = () => {
@@ -20,7 +20,6 @@ const Form = () => {
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (
       nombre.length > 2 &&
-      /* nombre.includes(" ") && */
       regexEmail.test(email)
       
     ) {
@@ -45,7 +44,7 @@ const Form = () => {
 
 
 
-            <button>Enviar</button>
+            <button className="submit">Enviar</button>
             {error && <h4 style={{ color: "red" }}>Por favor chequea que la información sea correcta</h4>}
             {confirmacion && !error && (
             <h4 style={{ color: "green" }}>

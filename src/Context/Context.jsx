@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { reducer } from "../reducers/reducer";
-import { data } from "react-router-dom";
+
 
 
 const CharStates = createContext();

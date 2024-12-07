@@ -25,11 +25,18 @@ h1{
 
 nav{
   display: flex;
-  width: 80vw;
+  width: 100vw;
   justify-content: flex-start;
   padding: 1rem;
 }
 
+.navLink {
+  margin-left: 50px;
+  text-decoration: none;
+  color: inherit;  
+  font-weight: bold;
+  transition: color 0.3s ease;
+} 
 a{
   color: #000;
   text-decoration: none;
@@ -49,7 +56,7 @@ footer {
   bottom: 0;
   width: 90%;
   height: 40px;
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 footer > img{
@@ -122,26 +129,149 @@ tr:nth-child(even) {
 }
 
 .card img {
-  width: 100px; /* Ancho deseado */
-  height: auto; /* Mantiene las proporciones */
-  border-radius: 8px; /* Opcional: esquinas redondeadas */
+  width: 100px; 
+  height: auto; 
+  border-radius: 8px; 
 }
 
 /* Detail.css */
 .detail-img {
   width: 100%;
-  max-width: 400px; /* Ancho máximo de la imagen */
+  max-width: 400px; 
   height: auto;
-  border-radius: 10px; /* Redondear los bordes (opcional) */
+  border-radius: 10px; 
   display: block;
-  margin: 0 auto;  /* Esto centra la imagen horizontalmente */
+  margin: 0 auto;  
   height: auto;  
 }
 
 .detail-container {
-  text-align: center;  /* Centra el texto horizontalmente */
-  margin-top: 20px;    /* Añadir margen si es necesario */
+  text-align: center;  
+  margin-top: 20px;   
+}
+
+.theme-toggle-btn {
+  background-color: transparent;
+  border: 2px solid #ccc;
+  padding: 8px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 110px ;
+  margin-top: 20px;
+  margin-left: 100px;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #f0f0f0;
+  border-color: #aaa;
+}
+
+.theme-toggle-btn:focus {
+  outline: none;
+}
+
+.theme-toggle-btn svg {
+  transition: transform 0.3s ease;
 }
 
 
+.theme-toggle-btn:hover svg {
+  transform: rotate(360deg); 
+}
 
+body.dark .theme-toggle-btn {
+  border-color: #fff; 
+}
+
+
+.favButton{
+  background-color: rgba(136, 136, 136, 0.116);
+  padding: 10px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.favButton.fabAdded {
+  background-color: #0077ff;
+  color: white;
+}
+
+.fabRemoved {
+  background-color: gray;
+  color: black;
+}
+
+
+form {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 300px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box; 
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+button.submit {
+  width: 100%;
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+h4 {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+h4[style*="color: red"] {
+  background-color: #f8d7da;
+}
+
+h4[style*="color: green"] {
+  background-color: #d4edda;
+}

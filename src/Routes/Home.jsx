@@ -3,6 +3,7 @@ import { useCharStates } from "../Context/Context";
 import Card from "../Components/Card"; 
 
 
+
 const Home = () => {
   const { state, dispatch } = useCharStates();
   const { chars , favs, theme } = state;  
@@ -12,7 +13,7 @@ const Home = () => {
   
   return (
     
-      <div className={`home ${theme}`}>
+      <div >
       <h1>Bienvenido a mi repo de Dentistas</h1>
       <div className="card-grid">
         {chars.map((char) => (
