@@ -1,33 +1,24 @@
 import React from "react";
 import { useCharStates } from "../Context/Context";
-import Card from "../Components/Card";  // Asegúrate de importar Card si lo estás usando
+import Card from "../Components/Card"; 
+
 
 const Home = () => {
   const { state, dispatch } = useCharStates();
-  const { chars, favs, theme } = state;  // Asegúrate de que 'theme' esté en tu estado
+  const { chars , favs, theme } = state;  
+  
 
-  console.log(chars); // Verifica la estructura de los datos
-
+  console.log(chars);
   
   return (
     
       <div className={`home ${theme}`}>
-      <h1>Home</h1>
+      <h1>Bienvenido a mi repo de Dentistas</h1>
       <div className="card-grid">
         {chars.map((char) => (
          
-          <Card key={char.id} char={char}>
-            <h3>{char.name}</h3>
-            <p>{char.username}</p>
-            <p>{char.email}</p>
-            <button
-              onClick={() =>
-                dispatch({ type: "ADD_FAV", payload: char })
-              }
-            >
-              Add to Favorites
-            </button>
-          </Card> // Aquí cerramos correctamente el componente Card
+          <Card key={char.id} char={char} name={char.name}/>
+           
         ))}
       </div>
     </div>

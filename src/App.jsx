@@ -18,11 +18,10 @@ function App() {
         <Route path="/envio" element={<Form />} />
         <Route path="/favs" element={<Favs />} />
         <Route path="/detail/:id" element={<Detail />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<h1>Not Found</h1>} />
-
+        
       </Routes>
-
+      <br />
+      <br />
       <Footer />
     </div>
 

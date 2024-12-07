@@ -15,7 +15,7 @@ const Navbar = () => {
     <Link to="/envio">
       <h4>Contacto</h4>
     </Link>
-    <Link to="/cart">
+    <Link to="/detail/:id">
       <h4>Detalle de cada dentista</h4>
     </Link>
     <Link to="/favs">

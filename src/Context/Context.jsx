@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext,useContext,useEffect,useReducer} from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 import { reducer } from "../reducers/reducer";
 import { data } from "react-router-dom";
 
@@ -11,24 +11,26 @@ const initialState = {
   chars: [],
   favs: lsFavs,
   theme: "light",
-  data : []
+  data: []
 };
 
 export const CharProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const urlBase = "https://jsonplaceholder.typicode.com/users";
 
-    useEffect(() => {
-    localStorage.setItem("favs", JSON.stringify(state.favs));
-  }, [state.favs]);
-  
-    useEffect(() => {
-    axios(urlBase).then((res) =>
-      dispatch({ type: "GET_CHARS", payload: res.data})
+
+
+  useEffect(() => {
+    axios(urlBase).then((res) => {
+      console.log(res.data);
+      dispatch({ type: "GET_CHARS", payload: res.data })
+    }
     );
   }, []);
 
-
+  useEffect(() => {
+    localStorage.setItem("favs", JSON.stringify(state.favs));
+  }, [state.favs]);
 
   return (
     <CharStates.Provider value={{ state, dispatch }}>

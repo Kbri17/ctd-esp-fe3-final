@@ -120,3 +120,28 @@ tr:nth-child(even) {
 .dark > a {
   color: white;
 }
+
+.card img {
+  width: 100px; /* Ancho deseado */
+  height: auto; /* Mantiene las proporciones */
+  border-radius: 8px; /* Opcional: esquinas redondeadas */
+}
+
+/* Detail.css */
+.detail-img {
+  width: 100%;
+  max-width: 400px; /* Ancho máximo de la imagen */
+  height: auto;
+  border-radius: 10px; /* Redondear los bordes (opcional) */
+  display: block;
+  margin: 0 auto;  /* Esto centra la imagen horizontalmente */
+  height: auto;  
+}
+
+.detail-container {
+  text-align: center;  /* Centra el texto horizontalmente */
+  margin-top: 20px;    /* Añadir margen si es necesario */
+}
+
+
+

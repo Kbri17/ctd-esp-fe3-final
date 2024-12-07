@@ -3,13 +3,13 @@ export const reducer = (state,action) => {
     case "GET_CHARS":
       return {
         ...state,
-        chars: action.paylopad,
+        chars: action.payload,
       };
     case "ADD_FAV":
-      return {
-        ...state,
-        chars: action.payloads,
-      };
+      const updatedFavs = [...state.favs, action.payload];
+      localStorage.setItem("favs", JSON.stringify(updatedFavs)); // Sincroniza con localStorage
+      return { ...state, favs: updatedFavs };
+    
     case "DELETE_FAV":
         const filteredFavs = state.favs.filter((fav) => fav.id !== action.payload.id);
       return {
